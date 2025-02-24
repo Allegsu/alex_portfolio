@@ -1,6 +1,11 @@
 # SURVIVOR RECORDS 지후 - Alex
 # <a href="https://github.com/Allegsu/alex_portfolio"><img src="./src/media/images/readme_i/JEW.png" alt="Journal" width="300" height="200"></img></a>
-<p>Sup Mates if you reach here it means you want to know more about me and reach to me, it would be a pleasure press "X" button to open the records or "O" to be redirected outside of here.</p>
-<a href="https://Allegsu.github.io/alex_portfolio"><img src="./src/media/images/xbutton-ps.png" alt="X" width="50" height="50"></img><span>OPEN PORTFOLIO</span></a>
-<a href="https://github.com/Allegsu"><img src="./src/media/images/readme_i/OButtonPS.png" alt="O" width="50" height="50"></img><span>BACK</span><a>
+<p style="color:gray"><strong style="color:white">Sup Mates!</strong> If you've made it here, it means you're curious to know more <strong style="color:white">about me </strong>and how to reach me. I'd be happy to connect! Press the <strong style="color:white">"X" button</strong> to open the records, or hit <strong style="color:white">"O"</strong> to head back to my main <strong style="color:white">GitHub profile.</strong></p>
+
+<p align="right" display="inline-block">
+<a href="https://Allegsu.github.io/alex_portfolio"><img src="./src/media/images/xbutton-ps.png" alt="X" width="50" height="50"></img><span style="color:white; margin-left: 4px">OPEN PORTFOLIO</span></a>
+<a href="https://github.com/Allegsu"><img src="./src/media/images/readme_i/OButtonPS.png" alt="O" width="50" height="50"></img><span style="color:white; margin-left: 4px;">BACK</span><a>
+</p>
+
+
 
