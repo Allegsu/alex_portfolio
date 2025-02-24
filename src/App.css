@@ -1,0 +1,189 @@
+/* Key Frames */
+@keyframes textBrighten {
+  0% {
+    text-shadow: none;
+    color: #ccc;
+  }
+  100% {
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    color: #fff;
+  }
+}
+@keyframes imageBrighten {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0  rgba(0, 0, 0, 0));
+  }
+  100% {
+    filter: brightness(2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  }
+  
+}
+/* Custom Fonts */
+@font-face {
+  font-family: 'Press Gothic Regular';
+  src: url('./media/fonts/PressGothic/Press\ Gothic\ Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'din-1451';
+  src: url('./media/fonts/din-1451/DINEngschriftStd.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+.TLFont-Simple{
+    color: white;
+    font-family: 'Press Gothic Regular', sans-serif;
+}
+.TLFont-UI{
+    color: white;
+    font-family: 'din-1451', sans-serif;
+}
+.TLFont {
+  font-family: 'Press Gothic Regular', sans-serif;
+  font-size: 2rem;
+  animation: textBrighten 2s infinite alternate;
+  position: absolute;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); /* Slight text shadow */
+}
+
+/* Body Web Page and HTML */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+}
+
+.App-video {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App-video video {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover; /* Make sure the video covers the screen */
+  position: absolute;
+  top: 0%;
+  left: 0%;
+}
+/* Menu Containers */
+.App-menu-header{
+  display: inline-block;
+  font-size: 1.5rem;
+  font-weight: lighter;
+}
+.App-menu {
+  height: 90vh;
+  width: 90vw;
+  position: absolute;
+  /*top: 30%;*/
+  /*left: 50%;*/
+  /*transform: translateX(-50%);*/
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 2vw;
+  /*border-radius: 40px;*/
+  text-align: center;
+}
+.App-menu-options{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-top: 2rem 0;
+}
+/* Menu Buttons */
+.App-menu-options button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: none;
+  background-color: transparent;
+  font-size: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: left;
+}
+/* Button Images */
+.Button-Images{
+  height: 15vh;
+  width: 15vw;
+  /*transition: filter 0.3s ease, box-shadow 0.3s ease;*/
+  transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+.Button-Images-B{
+  height: 10vh;
+  width: 10vw;
+  margin-right: 3rem;
+  margin-left: 3rem; /* Button Spacing - Little tweak */
+  transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+/* Button Effects */
+.Button-Images:hover{
+  animation: imageBrighten 0.3s forwards;
+}
+.App-menu-options button:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.Button-Images-B:hover{
+  animation: imageBrighten 0.3s forwards;
+  transform: scale(1.1); 
+}
+.Button-Images:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+/* PS Container */
+.PS-Button-Container {
+  display: inline-flex;
+  margin-left: 40rem;
+  margin-top: 5rem;
+  justify-content: center;
+  padding-top: 2em;
+}
+/* PS Buttons */
+.PS-Button{
+  display: flex;
+  align-items: end;
+  margin-left: 1em;
+  padding: 1em 2em;
+  font-size: 1em;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.PS-Button-Images{
+  height: 3vh;
+  width: 3vw;
+  display: block;
+  margin-right: 1em;
+  transition: filter 0.3s ease, box-shadow 0.3s ease;
+}
+.PS-Button-Images:hover{
+  animation: imageBrighten 0.3s forwards;
+}
+.PS-Button span{
+  color: white;
+  font-size: 2rem;
+  font-family: 'Press Gothic Regular', sans-serif;
+}
+

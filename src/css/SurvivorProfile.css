@@ -1,0 +1,438 @@
+/*keyframes*/
+@keyframes rotateInfinite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+  
+}
+@keyframes imageBrighten {
+  0% {
+    filter: brightness(1) drop-shadow(0 0 0  rgba(0, 0, 0, 0));
+  }
+  100% {
+    filter: brightness(2) drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+  }
+  
+}
+@keyframes textBrighten {
+  0% {
+    text-shadow: none;
+    color: #ccc;
+  }
+  100%{
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9);
+    color: #fff;
+  }
+}
+/* Custom Fonts */
+@font-face {
+    font-family: 'Press Gothic Regular';
+    src: url('../media/fonts/PressGothic/Press\ Gothic\ Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'din-1451';
+    src: url('../media/fonts/din-1451/DINEngschriftStd.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'din-1451-expanded';
+    src: url('../media/fonts/d-din/D-DINExp.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  .TLFont {
+    font-family: 'Press Gothic Regular', sans-serif;
+    font-size: 2rem;
+    animation: textBrighten 2s infinite alternate;
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.9); /* Slight text shadow */
+  }
+  .TLFont-UI{
+    color: white;
+    font-family: 'din-1451', sans-serif;
+}
+.TLFont-DIN-Expanded{
+  color: white;
+  font-family: 'din-1451-expanded', sans-serif;
+}
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.App {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+  }
+  .SurvivorProfile {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    height: 70%;
+    width: 90%;
+    margin: 50px auto;
+    box-sizing: border-box; 
+  }
+  .SurvivorProfile::before {
+    content: "";
+    position: absolute;
+    bottom: 70px; 
+    left: 5%; /* Start position */
+    width: 90%; /* Adjust width of the line */
+    height: 1px; /* Line thickness */
+    background: white; /* Line color */
+  }
+
+  .ProfileHeader {
+    display: flex;
+    align-items: center;
+    width: 90%; /* Ensure the header spans the entire width */
+    position: relative;
+    padding: 10px;
+  }
+  
+  .ProfileHeader h1 {
+    font-size: 2rem;
+    font-family: 'din-1451', sans-serif;
+    color: white;
+    margin: 0; /* Remove default margins */
+    padding-right: 10px; /* Add spacing between text and the line */
+    white-space: nowrap; /* Prevent the text from wrapping */
+  }
+
+  .ProfileHeader::after {
+    content: "";
+    flex-grow: 1; /* Make the line extend to fill the available space */
+    height: 1px; /* Line thickness */
+    background: white; /* Line color */
+    margin-left: 10px; /* Space between text and line */
+  }
+  
+  .ProfileContent {
+    /*Original Arragment*/
+    /*text-align: left;
+    width: 100%;*/
+    height: 70%;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+  .Content{ /*Adjustment for Content Div*/
+    /*height: 70%;*/
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+  }
+  .ProfileSection {
+    margin-bottom: 20px;
+  }
+  
+  .ProfileSection h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .ProfileSection p,
+  .ProfileSection ul {
+    font-size: 1rem;
+  }
+  
+  .ProfileSection ul {
+    list-style: disc;
+    padding-left: 20px;
+  }
+  
+  .ProfileFooter {
+    margin-top: 20px;
+  }
+  
+  .BackButton {
+    background: #ff4d4d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+  }
+  
+  .BackButton:hover {
+    background: #ff1a1a;
+  }
+  
+  .ProfileContent {
+    text-align: center;
+    margin-bottom: 60px; /* Add space for the navbar */
+  }
+  
+  .ProfilePicture img {
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    border: 2px solid white;
+    margin: 20px auto;
+    object-fit: cover;
+    object-position: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    transition: all 0.3s ease-in-out;
+  }
+  .ProfilePicture img:hover {
+    /* Glass effect */
+    filter: blur(0.9px) brightness(1); 
+    box-shadow: 0 8px 20px rgb(220, 185, 185); 
+  }
+  .ProfileDetails h2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+  
+  .ProfileDetails p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+  /*Carousel*/
+  .CarouselTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between the arrows and the title */
+    margin-bottom: 10px;
+  }
+  .CarouselTitle h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  .CarouselControls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .ArrowButton {
+    background: transparent;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  /* Button Images */
+  .Button-Images{
+  height: 4vh;
+  width: 4vw;
+  /*transition: filter 0.3s ease, box-shadow 0.3s ease;*/
+  transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+  /*Carousel Arrows*/
+  .Button-Images-Carousel-AR{
+    height: 2vh;
+    width: auto;
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transform: rotate(-90deg);
+  }
+  .Button-Images-Carousel-AR:hover{
+    animation: imageBrighten 0.3s forwards;
+    filter: brightness(1);
+  }
+  .Button-Images-Carousel-AL{
+    height: 2vh;
+    width: auto;
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+    transform: rotate(90deg);
+  }
+  .Button-Images-Carousel-AL:hover{
+    animation: imageBrighten 0.3s forwards;
+    filter: brightness(1);
+  }
+  /* Button Effects */
+  .Button-Images:hover{
+  animation: imageBrighten 0.3s forwards;
+}
+  .App-menu-options button:hover{
+  background-color: rgba(255, 255, 255, 0.1);
+}
+  .App-video {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    object-fit: cover;
+  }
+  
+  .App-video video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Make sure the video covers the screen */
+    position: absolute;
+    top: 0%;
+    left: 0%;
+  }
+
+  /*Map Styles*/
+  .Map{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 80vw;
+    padding: 20px;
+    max-height: 500px;
+    overflow: hidden;
+    margin: 50px auto;
+    box-sizing: border-box;
+  }
+
+  .Menu-Selection {
+    flex: 0.3;
+    min-width: 150px;
+    max-width: 30vw;
+    max-height: 300px;
+    overflow-y: auto;
+    margin-right: 20px;
+    text-align: justify;
+    max-height: 300px;
+    overflow-y: auto;
+  }
+
+  .Menu-Selection h2 {
+    cursor: pointer;
+    padding: 10px;
+    margin: 5px 0;
+    transition: background-color 0.3s ease, color 0.3 ease;
+  }
+
+  .Menu-Selection h2.active{
+    animation: imageBrighten 0.3s forwards;
+    font-weight: bold;
+  }
+
+  .Menu-Selection-IMG {
+    height: auto;
+    width: 7vw;
+    margin-bottom: 20px;
+  }
+  .Paragraph-Colour{
+    color: red;
+  }
+  /* Progress Bar Container */
+  .Progress-Bar{
+    display: inline-flex;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 20px; 
+  }
+  .Bar {
+    width: 15px;
+    height: 5px;
+    border-radius: 30%;
+  }
+  .Bar.filled{
+    background-color: #fff;
+  }
+
+  /* Wrapper for scrollable content */
+  .Scrollable-Content {
+    max-width: 80vw;
+    max-width: calc(100% - 220px);
+    max-height: 250px; 
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    padding: 10px;
+    display: flex;
+    gap: 20px;
+    margin: auto;
+  }
+  /* Scrollbar styles */
+  .Scrollable-Content::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .Scrollable-Content::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0, 0.3);
+    border-radius: 10px;
+  }
+  .Scrollable-Content::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;
+    transition: background 0.3s;
+  }
+  .Scrollable-Content::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.8); 
+  }
+  /*Trophy Styles*/
+  .TrophyContent{
+    min-width: 60dvw;
+    max-width: 30vw;
+    max-height: 30dvh;
+    overflow-y: auto;
+    display: inline-flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: auto;
+    gap: 20px; 
+  }
+  .Menu-Sections{
+    flex: 0.5;
+    margin: auto;
+    text-align: justify;
+    padding: 2rem;
+  }
+  .Menu-Sections h2{
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: none;
+  }
+  .Menu-Sections h2:active{
+    animation: imageBrighten 0.3s forwards;
+    font-weight: bold;
+  }
+  .ProjectOptions{
+    flex: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .ProjectView{
+    flex: 1;
+    max-width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+  }
+  .ProjectView img {
+    max-width: 15vw;
+    height: 15vw;
+    object-fit: contain;
+    border-radius: 15%;
+    margin-bottom: 10px;
+  }
+  .ProjectView p {
+    margin: 0;
+  }

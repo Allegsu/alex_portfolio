@@ -1,0 +1,28 @@
+.NavBar {
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  .NavItem {
+    margin: 0 20px;
+  }
+   
+  .NavItem img:hover {
+    transform: scale(1.2);
+    filter: brightness(1);
+  }
+  
+  /*Button Images*/
+  .Button-Images{
+    height: 50px;
+    width: 50px;
+    /*transition: filter 0.3s ease, box-shadow 0.3s ease;*/
+    transition: filter 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  }
