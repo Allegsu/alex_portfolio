@@ -2,7 +2,7 @@ import { useState } from 'react';
 //import './App.css';
 import SurvivorProfile from '../src/components/SurvivorProfile';
 // Media Imports
-import video1 from './media/videos/boat_on_the_shore.mp4';
+import video1 from './media/videos/boatMain.mp4';
 import video2 from './media/videos/boat_on_the_shore.mp4';
 
 function App() {
