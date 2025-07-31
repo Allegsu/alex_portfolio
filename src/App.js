@@ -1,12 +1,31 @@
-import { useState } from 'react';
-//import './App.css';
+import { useState, useEffect } from 'react';
 import SurvivorProfile from '../src/components/SurvivorProfile';
-// Media Imports
-import video1 from './media/videos/boatMain.mp4';
-import video2 from './media/videos/boat_on_the_shore.mp4';
+
+// Title Screen (responsive versions)
+import videoMobile from './media/videos/boat-mobile.mp4';
+import videoDesktop from './media/videos/boat-desktop.mp4';
+
+// Main Screen 
+import video2 from './media/videos/shore-desktop.mp4'; 
 
 function App() {
   const [showVideo2, setShowVideo2] = useState(false);
+  const [initialVideoSrc, setInitialVideoSrc] = useState(videoDesktop); 
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const updateSource = () => {
+      setInitialVideoSrc(mediaQuery.matches ? videoMobile : videoDesktop);
+    };
+
+    updateSource();   
+    mediaQuery.addEventListener('change', updateSource);
+
+    return () => {
+      mediaQuery.removeEventListener('change', updateSource);
+    };
+  }, []);
 
   const handleClick = () => {
     setShowVideo2(true);
@@ -19,19 +38,19 @@ function App() {
   return (
     <div className="App">
       <div className="App-video" onClick={handleClick}>
-        <video key={showVideo2 ? 'video2' : 'video1'} autoPlay muted loop>
-          <source src={showVideo2 ? video2 : video1} type="video/mp4" />
+        <video key={showVideo2 ? 'video2' : initialVideoSrc} autoPlay muted loop playsInline>
+          <source src={showVideo2 ? video2 : initialVideoSrc} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {!showVideo2 && <h1 className="TLFont">PRESS ANY BUTTON</h1>}
       </div>
 
       {showVideo2 && <SurvivorProfile handleBack={handleBack} />}
-
     </div>
   );
 }
 
 export default App;
+
 
 
