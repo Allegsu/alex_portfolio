@@ -10,7 +10,7 @@
 
 # production
 /build
-
+/src/media/videos/main
 # misc
 .DS_Store
 .env.local
